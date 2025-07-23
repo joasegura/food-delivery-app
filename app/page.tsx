@@ -106,25 +106,20 @@ export default function HomePage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-20">
+    <div className="min-h-screen bg-background pb-20">
       {/* Header - Mobile First */}
-      <header className="bg-white px-4 py-4 shadow-sm sticky top-0 z-40">
-        <div className="flex items-center justify-between mb-4">
-          <h1 className="text-xl font-bold text-gray-900">Inicio</h1>
-          <Button variant="ghost" size="icon" className="touch-manipulation" aria-label="Ver carrito">
-            <ShoppingCart className="w-5 h-5" />
-          </Button>
-        </div>
-
-        {/* Search Bar - Touch Optimized */}
-        <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
-          <Input
-            placeholder="Buscar en la tienda"
-            className="pl-10 h-12 bg-orange-50 border-orange-100 focus:border-orange-300 text-base touch-manipulation"
-          />
-        </div>
+      <header className="bg-primary w-full flex justify-center items-center py-2">
+        <Image src="/images/pedidos-libres-logo.png" alt="Pedidos Libres Logo" className="h-12 w-auto" width={160} height={48} priority />
       </header>
+
+      {/* Search Bar - Touch Optimized */}
+      <div className="relative">
+        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
+        <Input
+          placeholder="Buscar en la tienda"
+          className="pl-10 h-12 bg-orange-50 border-orange-100 focus:border-orange-300 text-base touch-manipulation"
+        />
+      </div>
 
       {/* Categories - Horizontal Scroll */}
       <section className="px-4 py-4 bg-white border-b border-gray-100">
@@ -133,11 +128,7 @@ export default function HomePage() {
             <Button
               key={category}
               variant={index === 0 ? "default" : "outline"}
-              className={`whitespace-nowrap h-10 px-4 text-sm touch-manipulation flex-shrink-0 ${
-                index === 0
-                  ? "bg-orange-500 hover:bg-orange-600 text-white"
-                  : "border-gray-200 hover:bg-gray-50 bg-white"
-              }`}
+              className={`whitespace-nowrap h-10 px-4 text-sm touch-manipulation flex-shrink-0 ${index === 0 ? "bg-primary hover:bg-primary/90 text-white" : "border-secondary text-primary bg-background hover:bg-secondary/20"}`}
               aria-label={`Filtrar por categoría ${category}`}
             >
               {category}

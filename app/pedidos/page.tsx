@@ -46,9 +46,9 @@ export default function OrdersPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-20">
+    <div className="min-h-screen bg-background pb-20">
       {/* Header */}
-      <div className="bg-white px-4 py-4 shadow-sm">
+      <div className="bg-background px-4 py-4 shadow-sm">
         <div className="flex items-center justify-between">
           <h1 className="text-xl font-bold">Pedidos</h1>
           <Button variant="ghost" size="icon">
@@ -58,17 +58,13 @@ export default function OrdersPage() {
       </div>
 
       {/* Tabs */}
-      <div className="bg-white px-4 border-b">
+      <div className="bg-background px-4 border-b">
         <div className="flex gap-6">
           {["En curso", "Historial"].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`text-sm font-medium pb-3 border-b-2 transition-colors ${
-                activeTab === tab
-                  ? "text-orange-500 border-orange-500"
-                  : "text-gray-500 border-transparent hover:text-gray-700"
-              }`}
+              className={`text-sm font-medium pb-3 border-b-2 transition-colors ${activeTab === tab ? "text-primary border-primary" : "text-primary/60 border-transparent hover:text-primary"}`}
               aria-label={`Ver pestaña ${tab}`}
             >
               {tab}

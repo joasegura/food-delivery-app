@@ -29,9 +29,9 @@ export default function CartPage() {
   const total = subtotal + delivery + taxes
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-20">
+    <div className="min-h-screen bg-background pb-20">
       {/* Header */}
-      <div className="bg-white px-4 py-4 shadow-sm">
+      <div className="bg-background px-4 py-4 shadow-sm">
         <div className="flex items-center gap-3">
           <Link href="/">
             <Button variant="ghost" size="icon" aria-label="Volver al inicio">
@@ -56,7 +56,7 @@ export default function CartPage() {
                   <Button
                     variant="outline"
                     size="icon"
-                    className="w-8 h-8 bg-transparent"
+                    className="w-8 h-8 bg-background border-primary text-primary"
                     onClick={() => updateQuantity(item.id, -1)}
                     aria-label={`Quitar una unidad de ${item.name}`}
                   >
@@ -66,7 +66,7 @@ export default function CartPage() {
                   <Button
                     variant="outline"
                     size="icon"
-                    className="w-8 h-8 bg-transparent"
+                    className="w-8 h-8 bg-background border-primary text-primary"
                     onClick={() => updateQuantity(item.id, 1)}
                     aria-label={`Agregar una unidad de ${item.name}`}
                   >
@@ -118,7 +118,7 @@ export default function CartPage() {
       {/* Pay Button */}
       <div className="fixed bottom-20 left-4 right-4">
         <Link href="/confirmar-pedido">
-          <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-xl shadow-lg" aria-label="Pagar el pedido">
+          <Button className="w-full bg-primary hover:bg-primary/90 text-white py-4 rounded-xl shadow-lg" aria-label="Pagar el pedido">
             <span className="font-medium text-lg">Pagar</span>
           </Button>
         </Link>

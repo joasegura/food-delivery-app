@@ -31,9 +31,9 @@ export default function ConfirmOrderPage() {
   const total = 10762.5
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-20">
+    <div className="min-h-screen bg-background pb-20">
       {/* Header */}
-      <div className="bg-white px-4 py-4 shadow-sm">
+      <div className="bg-background px-4 py-4 shadow-sm">
         <div className="flex items-center gap-3">
           <Link href="/carrito">
             <Button variant="ghost" size="icon" aria-label="Volver al carrito">
@@ -132,7 +132,7 @@ export default function ConfirmOrderPage() {
 
       {/* Confirm Button */}
       <div className="fixed bottom-20 left-4 right-4">
-        <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-xl shadow-lg" aria-label="Confirmar el pedido">
+        <Button className="w-full bg-primary hover:bg-primary/90 text-white py-4 rounded-xl shadow-lg" aria-label="Confirmar el pedido">
           <span className="font-medium text-lg">Confirmar pedido</span>
         </Button>
       </div>

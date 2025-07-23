@@ -21,10 +21,10 @@ export default function ProfilePage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-20">
+    <div className="min-h-screen bg-background pb-20">
       {/* Header */}
-      <div className="bg-white px-4 py-6 shadow-sm">
-        <h1 className="text-xl font-bold text-center mb-6">Perfil</h1>
+      <div className="bg-background px-4 py-6 shadow-sm">
+        <h1 className="text-xl font-bold text-center mb-6 text-primary">Perfil</h1>
 
         {/* User Info */}
         <div className="flex flex-col items-center">
@@ -40,7 +40,7 @@ export default function ProfilePage() {
       <div className="px-4 py-6 space-y-6">
         {/* Account Section */}
         <div>
-          <h3 className="text-lg font-semibold mb-3">Cuenta</h3>
+          <h3 className="text-lg font-semibold mb-3 text-primary">Cuenta</h3>
           <Card>
             <CardContent className="p-0">
               {accountOptions.map((option, index) => (
@@ -64,7 +64,7 @@ export default function ProfilePage() {
 
         {/* Help Section */}
         <div>
-          <h3 className="text-lg font-semibold mb-3">Ayuda</h3>
+          <h3 className="text-lg font-semibold mb-3 text-primary">Ayuda</h3>
           <Card>
             <CardContent className="p-0">
               {helpOptions.map((option, index) => (

@@ -64,7 +64,7 @@ export default function RestaurantPage() {
   return (
     <div className="min-h-screen bg-gray-50 pb-20">
       {/* Header - Mobile Optimized */}
-      <header className="bg-white px-4 py-4 shadow-sm sticky top-0 z-40">
+      <header className="bg-background px-4 py-4 shadow-sm sticky top-0 z-40">
         <div className="flex items-center gap-3">
           <Link href="/buscar" className="touch-manipulation">
             <Button variant="ghost" size="icon" className="h-10 w-10">
@@ -76,18 +76,14 @@ export default function RestaurantPage() {
       </header>
 
       {/* Categories - Sticky Navigation */}
-      <nav className="bg-white border-b border-gray-200 sticky top-16 z-30" role="navigation" aria-label="Categorías de menú">
+      <nav className="bg-background border-b border-secondary sticky top-16 z-30" role="navigation" aria-label="Categorías de menú">
         <div className="px-4 py-3">
           <div className="flex gap-6 overflow-x-auto scrollbar-hide">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`text-sm font-medium pb-2 border-b-2 transition-all duration-200 whitespace-nowrap touch-manipulation ${
-                  activeCategory === category
-                    ? "text-orange-500 border-orange-500"
-                    : "text-gray-500 border-transparent hover:text-gray-700 active:text-gray-800"
-                }`}
+                className={`text-sm font-medium pb-2 border-b-2 transition-all duration-200 whitespace-nowrap touch-manipulation ${activeCategory === category ? "text-primary border-primary" : "text-primary/60 border-transparent hover:text-primary"}`}
                 aria-label={`Ver categoría ${category}`}
               >
                 {category}
@@ -125,7 +121,7 @@ export default function RestaurantPage() {
                             <Button
                               variant="outline"
                               size="icon"
-                              className="w-8 h-8 bg-white border-gray-300 touch-manipulation"
+                              className="w-8 h-8 bg-background border-primary text-primary touch-manipulation"
                               onClick={() => updateCartItem(item.id, -1)}
                               aria-label={`Quitar una unidad de ${item.name}`}
                             >
@@ -137,7 +133,7 @@ export default function RestaurantPage() {
                             <Button
                               variant="outline"
                               size="icon"
-                              className="w-8 h-8 bg-white border-gray-300 touch-manipulation"
+                              className="w-8 h-8 bg-background border-primary text-primary touch-manipulation"
                               onClick={() => updateCartItem(item.id, 1)}
                               aria-label={`Agregar una unidad de ${item.name}`}
                             >
@@ -148,7 +144,7 @@ export default function RestaurantPage() {
                           <Button
                             variant="outline"
                             size="icon"
-                            className="w-8 h-8 bg-white border-gray-300 touch-manipulation"
+                            className="w-8 h-8 bg-background border-primary text-primary touch-manipulation"
                             onClick={() => updateCartItem(item.id, 1)}
                             aria-label={`Agregar una unidad de ${item.name}`}
                           >
@@ -169,7 +165,7 @@ export default function RestaurantPage() {
       {getTotalItems() > 0 && (
         <div className="fixed bottom-20 left-4 right-4 z-40 sm:max-w-md sm:mx-auto sm:left-auto sm:right-auto">
           <Link href="/carrito" className="touch-manipulation" aria-label="Ir al carrito">
-            <Button className="w-full bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white py-4 h-14 rounded-xl shadow-lg transition-all duration-200" aria-label="Agregar al pedido">
+            <Button className="w-full bg-primary hover:bg-primary/90 active:bg-primary/80 text-white py-4 h-14 rounded-xl shadow-lg transition-all duration-200" aria-label="Agregar al pedido">
               <div className="flex items-center justify-between w-full">
                 <span className="font-medium text-base">Agregar al Pedido</span>
                 <span className="font-bold text-base">${getTotalPrice().toLocaleString()}</span>
